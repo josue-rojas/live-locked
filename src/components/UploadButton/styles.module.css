@@ -1,0 +1,19 @@
+.uploadButton {
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 12px 20px;
+  transition: 100ms;
+}
+
+.uploadButton:hover {
+  opacity: .8;
+}
+
+.uploadButton input[type="file"] {
+  display: none;
+}
