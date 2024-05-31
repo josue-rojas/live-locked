@@ -1,38 +1,41 @@
-import { useState } from 'react';
+import { ChangeEventHandler } from 'react';
 import styles from './styles.module.css';
 
-type ImageBlock = [imageName: string, imageSrc: string];
 interface ImageUploadProps {
-  setImages: (imageBlock: ImageBlock) => void;
   isDisabled?: boolean;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  imageUploaded?: {
+    name: string;
+    url: string;
+  };
+  errorMessage?: string
 }
 
-const ImageUpload = ({ setImages, isDisabled }: ImageUploadProps) => {
-  const [imageUrl, setImageUrl] = useState({ imageName: '', url: '' });
-
-  const handleFileInput = async (e: any) => {
-    const file = e.target.files[0];
-    // const { uploadUrl, imageName } = await firebaseUtils.uploadImage(file)
-    // setImageUrl({ imageName, url: uploadUrl })
-    // setImages([imageName, uploadUrl]);
-  }
-
+const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage }: ImageUploadProps) => {
   return (
     <div className="file-uploader">
       <label className={styles.uploadButton}>
-        <input type="file" onChange={handleFileInput} disabled={isDisabled} />
+        <input
+          type="file"
+          onChange={onChange}
+          disabled={isDisabled} />
         Upload Image
       </label>
 
-      {imageUrl.imageName &&
+      {imageUploaded?.name &&
         <>
           <br></br>
-          Image succesfully updated
+          Image succesfully uploaded
           <br></br>
-          <a href={imageUrl.url}>
-            <span>{imageUrl.imageName}</span>
+          <a href={imageUploaded.url}>
+            <span>{imageUploaded.name}</span>
           </a>
         </>}
+      {errorMessage &&
+        <p>
+          {errorMessage}
+        </p>
+      }
       </div>
     )
 }

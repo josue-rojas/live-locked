@@ -14,6 +14,15 @@
   opacity: .8;
 }
 
-.uploadButton input[type="file"] {
+.uploadButton:has(input:disabled) {
+  background-color: rgb(93, 93, 93);
+}
+
+.uploadButton:hover:has(input:disabled) {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.uploadButton input {
   display: none;
 }
