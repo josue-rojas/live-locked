@@ -29,11 +29,10 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-      - name: Run buiold
+      - name: Run build
         run: npm run build
-        with:
-          env: 
-            REACT_APP_SUPABASE_ANON_KEY:  ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
+        env: 
+          REACT_APP_SUPABASE_ANON_KEY:  ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
