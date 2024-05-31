@@ -16,6 +16,7 @@ const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage }: Imag
     <div className="file-uploader">
       <label className={styles.uploadButton}>
         <input
+          accept=".jpg, .jpeg, .png"
           type="file"
           onChange={onChange}
           disabled={isDisabled} />
