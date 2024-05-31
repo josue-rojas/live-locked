@@ -9,9 +9,10 @@ interface ImageUploadProps {
     url: string;
   };
   errorMessage?: string
+  loading?: boolean;
 }
 
-const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage }: ImageUploadProps) => {
+const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage, loading }: ImageUploadProps) => {
   return (
     <div className="file-uploader">
       <label className={styles.uploadButton}>
@@ -19,8 +20,8 @@ const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage }: Imag
           accept=".jpg, .jpeg, .png"
           type="file"
           onChange={onChange}
-          disabled={isDisabled} />
-        Upload Image
+          disabled={isDisabled || loading} />
+        {loading ? 'loading' : 'Upload Image'}
       </label>
 
       {imageUploaded?.name &&

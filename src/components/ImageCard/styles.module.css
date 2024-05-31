@@ -1,0 +1,27 @@
+.imageCard {
+  border-radius: 10px;
+  border: solid 1px black;
+  display: flex;
+  margin: auto;
+  max-width: 500px;
+  min-height: 100px;
+  min-width: 300px;
+  overflow: clip;
+}
+
+.imageCard img {
+  max-height: 100px;
+  object-fit: cover;
+  padding: 10px;
+  width: 100px;
+}
+
+.info {
+  padding: 10px;
+  text-align: left;
+}
+
+.imageCard p {
+  margin: 0;
+  margin-bottom: 5px;
+}

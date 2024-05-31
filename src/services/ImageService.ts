@@ -9,7 +9,7 @@ interface UploadResponse {
 
 export interface ImageData {
   id: number;
-  upload_date: string;
+  uploaded_date: string;
   bucket_location: string;
   uploaded_by: string;
   storage_id: string;
