@@ -50,7 +50,7 @@ export function Home() {
         return <ImageCard
           className={styles.imageCard}
           key={image.id}
-          src={BUCKET_URL + image.bucket_location}
+          src={BUCKET_URL + 'images/' + image.bucket_location}
           alt={image.bucket_location}
           title={image.bucket_location}
           author={image.uploaded_by}
