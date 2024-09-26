@@ -1,0 +1,14 @@
+.canvasContainer {
+  display: grid;
+  grid-template-columns: repeat(32, 1fr); 
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 15px auto; 
+}
+
+@media (max-width: 768px) {
+  .canvasContainer {
+    grid-template-columns: repeat(32, 1fr);
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.pixel {
+  background-color: #fff;
+  border: 1px solid #313131;
+  padding-bottom: 100%;
+  touch-action: none;
+  width: 100%; 
+}
+
+.pixel:hover {
+  cursor: pointer;
+}
