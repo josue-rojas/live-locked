@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/live-locket/static/css/main.f6184a9f.css",
-    "main.js": "/live-locket/static/js/main.7f6f92cc.js",
+    "main.css": "/live-locket/static/css/main.beef83f0.css",
+    "main.js": "/live-locket/static/js/main.6afc5541.js",
     "static/js/453.ed3810f9.chunk.js": "/live-locket/static/js/453.ed3810f9.chunk.js",
     "index.html": "/live-locket/index.html",
-    "main.f6184a9f.css.map": "/live-locket/static/css/main.f6184a9f.css.map",
-    "main.7f6f92cc.js.map": "/live-locket/static/js/main.7f6f92cc.js.map",
+    "main.beef83f0.css.map": "/live-locket/static/css/main.beef83f0.css.map",
+    "main.6afc5541.js.map": "/live-locket/static/js/main.6afc5541.js.map",
     "453.ed3810f9.chunk.js.map": "/live-locket/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6184a9f.css",
-    "static/js/main.7f6f92cc.js"
+    "static/css/main.beef83f0.css",
+    "static/js/main.6afc5541.js"
   ]
 }
