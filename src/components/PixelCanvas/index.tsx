@@ -193,9 +193,11 @@ export function PixelCanvas() {
         })
       }</div>
 
-    <Button onClick={handleSendToAPI}>Send</Button>
-    <Button onClick={handleDownload}>Download Art</Button>
-    <ImageUpload onChange={handleImageUpload} />
+      <div className={styles.buttonsWrapper}>
+        <Button onClick={handleSendToAPI} styleType="send">Send</Button>
+        <Button onClick={handleDownload}>Download Art</Button>
+        <ImageUpload onChange={handleImageUpload} />
+      </div>
 
     <canvas id="canvas-element" style={{display:'none'}}></canvas> 
     </div>

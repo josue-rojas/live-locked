@@ -14,14 +14,14 @@ interface ImageUploadProps {
 
 const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage, loading }: ImageUploadProps) => {
   return (
-    <div className="file-uploader">
-      <label className={styles.uploadButton}>
+    <>
+      <label className={"file-uploader " + styles.uploadButton}>
         <input
           accept=".jpg, .jpeg, .png"
           type="file"
           onChange={onChange}
           disabled={isDisabled || loading} />
-        {loading ? 'loading' : 'Upload Image'}
+        {loading ? 'loading' : 'Use own Image'}
       </label>
 
       {imageUploaded?.name &&
@@ -38,7 +38,7 @@ const ImageUpload = ({ isDisabled, onChange, imageUploaded, errorMessage, loadin
           {errorMessage}
         </p>
       }
-      </div>
+      </>
     )
 }
 
