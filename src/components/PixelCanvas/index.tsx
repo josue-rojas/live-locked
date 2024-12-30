@@ -13,6 +13,7 @@ export function PixelCanvas() {
   const [pixelColors, setPixelColors] = useState(PIXEL_ARR);
   const [currentColor, setCurrentColor] = useState('#FFFFFF');
   const [isMouseDown, setIsMouseDown] = useState(false);
+  const [disableSend, setDisableSend] = useState(false);
 
   useEffect(() => {
     function mouseDownEvent() {
@@ -58,6 +59,7 @@ export function PixelCanvas() {
   };
 
   const handleSendToAPI = async () => {
+    setDisableSend(true);
     const canvas = document.getElementById('canvas-element') as HTMLCanvasElement;
     const context = canvas.getContext('2d');
 
@@ -96,6 +98,8 @@ export function PixelCanvas() {
       } else {
         alert('Failed to convert canvas to image');
       }
+
+      setDisableSend(false);
     }, 'image/png');
   };
 
@@ -194,7 +198,7 @@ export function PixelCanvas() {
       }</div>
 
       <div className={styles.buttonsWrapper}>
-        <Button onClick={handleSendToAPI} styleType="send">Send</Button>
+        <Button onClick={handleSendToAPI} styleType="send" disabled={disableSend}>Send</Button>
         <Button onClick={handleDownload}>Download Art</Button>
         <ImageUpload onChange={handleImageUpload} />
       </div>

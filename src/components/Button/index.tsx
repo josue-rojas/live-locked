@@ -4,9 +4,10 @@ interface ButtonProps {
   children: ReactElement | ReactText;
   onClick: MouseEventHandler;
   styleType?: 'default' | 'send';
+  disabled?: boolean;
 }
 
-export function Button ({ children, onClick, styleType = 'default' }: ButtonProps) {
+export function Button ({ children, onClick, styleType = 'default', disabled }: ButtonProps) {
   const baseStyle = {
       backgroundColor: 'black',
       borderRadius: '10px',
@@ -47,6 +48,7 @@ export function Button ({ children, onClick, styleType = 'default' }: ButtonProp
 
   return (
     <button
+      disabled={disabled}
       style={currentStyle}
       onClick={onClick}
       onMouseOver={(e) => (e.currentTarget.style.backgroundColor = currentHoverStyle.backgroundColor)}
